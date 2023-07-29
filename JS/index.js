@@ -227,6 +227,42 @@ console.log("----------------------");
 const result4 = normalize(collection);
 console.log(result4);
 
+//
+// Fifth exercise
 
+const elements2 = [0, 1, false, 2, "", 3];
 
+const compact = (arg) => {
+
+  let initialArr = {};
+  if (Array.isArray(arg)) {
+    initialArr = [...arg].filter(Boolean);
+
+  } else if ( arg === null) {
+   return initialArr = null;
+  } else if (typeof arg === "object") {
+
+   Object.keys(arg).forEach(item => {
+      if (arg[item]) {
+        initialArr[item] = arg[item];
+      };
+    });
+     return initialArr;
+
+  } else if (typeof arg != "object" || !Array.isArray(arg)) {
+     initialArr = {arg};
+     return initialArr.arg;
+  }
+ 
+
+  return initialArr;
+};
+
+console.log("----------------------");
+
+console.log(compact(123)); // 123
+console.log(compact(null)); // null
+console.log(compact([0, 1, false, 2, "", 3])); // [1, 2, 3]
+console.log(compact({})); // {}
+console.log(compact({ price: 0, name: "cloud", altitude: NaN, taste: undefined, isAlive: false })); // {name: "cloud"}
 
