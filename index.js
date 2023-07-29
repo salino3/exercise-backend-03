@@ -94,13 +94,12 @@ const winnerByYear = (arr, year) => {
   const arr3 = arr2.map((item) => item.ranking);
   const arrRankings = arr3.sort((a, b) => b - a).slice(0, 3);
   return arr2.reduce((arr, obj) => {
-    if (
-      obj.ranking === arrRankings[0] ||
-      obj.ranking === arrRankings[1] ||
-      obj.ranking === arrRankings[2]) {
 
-        arr.push(obj.name);
-    }; 
+    for (let item of arrRankings){
+        if (obj.ranking === item) {
+          arr.push(obj.name);
+        };
+    };
     return arr;
   }, []);
 };
