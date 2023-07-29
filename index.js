@@ -10,6 +10,8 @@ const data = `id,name,surname,gender,email,picture
 05298880,Marco,Campos,male,marco.campos@example.com,https://randomuser.me/api/portraits/men/67.jpg
 61539018,Marco,Calvo,male,marco.calvo@example.com,https://randomuser.me/api/portraits/men/86.jpg`;
 
+//* First exercise
+
 const fromCSV = (csv) => {
   const lines = csv.trim().split("\n");
   const fields = lines.shift().split(",");
@@ -25,3 +27,22 @@ const fromCSV = (csv) => {
 
 const result = fromCSV(data);
 console.log(result);
+
+
+//
+//* Second Exercise
+
+const elements = ["lorem", "ipsum", "dolor", "sit", "amet"];
+const index = 2;
+const newValue = "furor";
+
+const replaceAt = (arr, index, newElement) => {
+    let arr2 = [...arr];
+    arr2[index] = newElement;
+    return arr2;
+};
+
+const result2 = replaceAt(elements, index, newValue);
+console.log(result2 === elements); 
+console.log("result 2", result2); 
+
