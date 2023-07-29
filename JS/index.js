@@ -1,3 +1,5 @@
+//* First exercise
+
 const data = `id,name,surname,gender,email,picture
 15519533,Raul,Flores,male,raul.flores@example.com,https://randomuser.me/api/portraits/men/42.jpg
 82739790,Alvaro,Alvarez,male,alvaro.alvarez@example.com,https://randomuser.me/api/portraits/men/48.jpg
@@ -10,7 +12,6 @@ const data = `id,name,surname,gender,email,picture
 05298880,Marco,Campos,male,marco.campos@example.com,https://randomuser.me/api/portraits/men/67.jpg
 61539018,Marco,Calvo,male,marco.calvo@example.com,https://randomuser.me/api/portraits/men/86.jpg`;
 
-//* First exercise
 
 const fromCSV = (csv) => {
   const lines = csv.trim().split("\n");
