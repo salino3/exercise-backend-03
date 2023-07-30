@@ -611,6 +611,58 @@ const logUser2 = (user)=>{
     else extraInfo = user.subject;
     console.log(`  - ${user.name}, ${user.age}, ${extraInfo}`);
 };
+//
+// Fourth exercise
+const students2 = [
+    {
+        name: "Luke Patterson",
+        age: 32,
+        occupation: "Internal auditor"
+    },
+    {
+        name: "Emily Coleman",
+        age: 25,
+        occupation: "English"
+    },
+    {
+        name: "Alexandra Morton",
+        age: 35,
+        occupation: "Conservation worker"
+    },
+    {
+        name: "Bruce Willis",
+        age: 39,
+        occupation: "Placement officer"
+    }
+];
+const filterStudentsBy = (students, criteria)=>{
+    return students.filter((user)=>{
+        const criteriaKeys = Object.keys(criteria);
+        return criteriaKeys.every((fieldName)=>{
+            return criteria[fieldName] === user[fieldName];
+        });
+    });
+};
+const logStudent2 = ({ name , occupation  })=>{
+    console.log(` - ${name}, ${occupation}`);
+};
+console.log("Students of age 35:");
+filterStudentsBy(students2, {
+    age: 35
+}).forEach(logStudent2);
+//
+//* Fifth exercies
+const swap = (arg1, arg2)=>{
+    return [
+        arg2,
+        arg1
+    ];
+};
+let age, occupation;
+console.log("----------------------");
+[occupation, age] = swap(39, "Placement officer");
+console.log("Occupation: ", occupation);
+console.log("Age: ", age);
 
 },{}]},["d0HGu","frsvN"], "frsvN", "parcelRequire690c")
 
